@@ -1,0 +1,54 @@
+#bau-cua{
+    position: relative;
+}
+#dia{
+    margin: 100px 0 0 450px;
+    width: 400px;
+}
+#chen{
+    display: none;
+    width: 330px;
+    height: 280px;
+    position: absolute;
+    top: 70px;
+    left: 485px;
+}
+#nut{
+    margin-top: 30px;
+    margin-left: 530px;
+}
+button{
+    margin-right: 10px;
+    width: 80px;
+    height: 30px;
+    cursor: pointer;
+    border: 1px solid #757575;
+    border-radius: 3px;
+}
+button:hover{
+    background-color: #cfcfcf;
+    border-color: black;
+}
+#mat-hot{
+    position: absolute;
+    top: 160px;
+    left: 530px;
+}
+.hot{
+    width: 80px;
+}
+#hot1{
+    position: absolute;
+    top: 80px;
+    left: 0;
+}
+#hot2{
+    position: absolute;
+    top: 0;
+    left: 80px;
+}
+#hot3{
+    position: absolute;
+    top: 80px;
+    left: 160px;
+}
