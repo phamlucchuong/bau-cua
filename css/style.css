@@ -142,11 +142,7 @@
         top: 250px;
         left: calc((100vw - 290px) / 2);
     }
-    #nut{
-        margin-top: 25px;
-        margin-left: 100px;
-    }
-    button{
+    #nut, button{
         display: none;
     }
     #mat-hot{
