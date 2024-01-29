@@ -1,7 +1,7 @@
 
 
 
-function playMainSound() {
+window.addEventListener("DOMContentLoaded", function () {
     var mainSound = document.getElementById('mainSound');
 
     // Bắt sự kiện "ended" bằng cách sử dụng hàm callback
@@ -12,10 +12,7 @@ function playMainSound() {
 
     // Phát âm thanh khi trang được tải
     mainSound.play();
-}
-
-window.addEventListener("DOMContentLoaded", playMainSound);
-
+});
 
 
 function dayNap() {

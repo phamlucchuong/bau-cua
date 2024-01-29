@@ -1,122 +1,233 @@
+
+/* desktop */
+
 @media (min-width: 600px) {
     html {
         background-image: url(../images/bg/bg-desktop.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    #bau-cua{
+        position: relative;
+        cursor: pointer;
+    }
+    #dia{
+        margin: 200px 0 0 450px;
+        width: 400px;
+    }
+    #chen{
+        width: 330px;
+        height: 280px;
+        position: absolute;
+        top: 170px;
+        left: 485px;
+    }
+    #nut{
+        margin-top: 30px;
+        margin-left: 530px;
+    }
+    button{
+        margin-right: 10px;
+        width: 80px;
+        height: 30px;
+        cursor: pointer;
+        border: 1px solid #757575;
+        border-radius: 3px;
+    }
+    button:hover{
+        background-color: #cfcfcf;
+        border-color: black;
+    }
+    #mat-hot{
+        position: absolute;
+        top: 260px;
+        left: 530px;
+    }
+    .hot{
+        width: 80px;
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+    #hot1{
+        position: absolute;
+        top: 80px;
+        left: 0;
+    }
+    #hot2{
+        position: absolute;
+        top: 0;
+        left: 80px;
+    }
+    #hot3{
+        position: absolute;
+        top: 80px;
+        left: 160px;
+    }
+    
+    .moNap {
+        transform: translateY(-200px);
+        animation: moveUp 0.5s ease-in-out;
+    }
+    
+    @keyframes moveUp {
+        0% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateY(-200px);
+        }
+    }
+    
+    .dayNap {
+        transform: translateY(0px);
+        animation: moveDown 0.5s ease-in-out;
+    }
+    
+    @keyframes moveDown {
+        0% {
+            transform: translateY(-200px);
+        }
+        100% {
+            transform: translateY(0px);
+        }
+    }
+    
+    .shake {
+        animation: shake 0.3s ease-in-out;
+    }
+    
+    @keyframes shake {
+        0%, 100% {
+            transform: translate(0, 0);
+        }
+        25% {
+            transform: translate(-5px, -5px);
+        }
+        50% {
+            transform: translate(5px, 5px);
+        }
+        75% {
+            transform: translate(-5px, -5px);
+        }
     }
 }
+
+
+
+/* moblie */
 
 @media (max-width: 599px) {
     html {
         background-image: url(../images/bg/bg-mobile.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
     }
-}
-
-
-html{
+    #bau-cua{
+        position: relative;
+        cursor: pointer;
+    }
+    #dia{
+        margin-top: 300px;
+        margin-left: calc((100vw - 320px) / 2);
+        width: 300px;
+    }
+    #chen{
+        /* display: none; */
+        width: 250px;
+        height: 250px;
+        position: absolute;
+        top: 240px;
+        left: calc((100vw - 270px) / 2);
+    }
+    #nut{
+        margin-top: 30px;
+        margin-left: 100px;
+    }
+    button{
+        margin-right: 10px;
+        width: 80px;
+        height: 30px;
+        cursor: pointer;
+        border: 1px solid #757575;
+        border-radius: 3px;
+    }
+    button:hover{
+        background-color: #cfcfcf;
+        border-color: black;
+    }
+    #nutXoc{
+        display: none;
+    }
+    #mat-hot{
+        position: absolute;
+        top: 340px;
+        left: 90px;
+    }
+    .hot{
+        width: 60px;
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+    #hot1{
+        position: absolute;
+        top: 70px;
+        left: 0;
+    }
+    #hot2{
+        position: absolute;
+        top: 5px;
+        left: 60px;
+    }
+    #hot3{
+        position: absolute;
+        top: 70px;
+        left: 120px;
+    }
     
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-#bau-cua{
-    position: relative;
-    cursor: pointer;
-}
-#dia{
-    margin: 200px 0 0 450px;
-    width: 400px;
-}
-#chen{
-    /* display: none; */
-    width: 330px;
-    height: 280px;
-    position: absolute;
-    top: 170px;
-    left: 485px;
-}
-#nut{
-    margin-top: 30px;
-    margin-left: 530px;
-}
-button{
-    margin-right: 10px;
-    width: 80px;
-    height: 30px;
-    cursor: pointer;
-    border: 1px solid #757575;
-    border-radius: 3px;
-}
-button:hover{
-    background-color: #cfcfcf;
-    border-color: black;
-}
-#mat-hot{
-    position: absolute;
-    top: 260px;
-    left: 530px;
-}
-.hot{
-    width: 80px;
-    border: 1px solid black;
-    border-radius: 5px;
-}
-#hot1{
-    position: absolute;
-    top: 80px;
-    left: 0;
-}
-#hot2{
-    position: absolute;
-    top: 0;
-    left: 80px;
-}
-#hot3{
-    position: absolute;
-    top: 80px;
-    left: 160px;
-}
-
-.moNap {
-    transform: translateY(-200px);
-    animation: moveUp 0.5s ease-in-out;
-}
-
-@keyframes moveUp {
-    0% {
-        transform: translateY(0);
+    .moNap {
+        transform: translateY(-150px);
+        animation: moveUp 0.5s ease-in-out;
     }
-    100% {
-        transform: translateY(-200px);
+    
+    @keyframes moveUp {
+        0% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateY(-150px);
+        }
     }
-}
-
-.dayNap {
-    transform: translateY(0px);
-    animation: moveDown 0.5s ease-in-out;
-}
-
-@keyframes moveDown {
-    0% {
-        transform: translateY(-200px);
-    }
-    100% {
+    
+    .dayNap {
         transform: translateY(0px);
+        animation: moveDown 0.5s ease-in-out;
     }
-}
-
-.shake {
-    animation: shake 0.3s ease-in-out;
-}
-
-@keyframes shake {
-    0%, 100% {
-        transform: translate(0, 0);
+    
+    @keyframes moveDown {
+        0% {
+            transform: translateY(-150px);
+        }
+        100% {
+            transform: translateY(0px);
+        }
     }
-    25% {
-        transform: translate(-5px, -5px);
+    
+    .shake {
+        animation: shake 0.3s ease-in-out;
     }
-    50% {
-        transform: translate(5px, 5px);
-    }
-    75% {
-        transform: translate(-5px, -5px);
+    
+    @keyframes shake {
+        0%, 100% {
+            transform: translate(0, 0);
+        }
+        25% {
+            transform: translate(-5px, -5px);
+        }
+        50% {
+            transform: translate(5px, 5px);
+        }
+        75% {
+            transform: translate(-5px, -5px);
+        }
     }
 }
