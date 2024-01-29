@@ -117,39 +117,39 @@
 /* moblie */
 
 @media (max-width: 599px) {
-    *:focus{
-        outline: none;
-    }
     html {
         background-image: url(../images/bg/bg-mobile.jpg);
         background-repeat: no-repeat;
         background-size: cover;
+        overflow: hidden;
     }
     #bau-cua{
         position: relative;
         cursor: pointer;
+        outline: none;
     }
     #dia{
         margin-top: 300px;
-        margin-left: calc((100vw - 320px) / 2);
-        width: 300px;
+        margin-left: calc((100vw - 350px) / 2);
+        width: 330px;
+        height: 200px;
     }
     #chen{
-        /* display: none; */
-        width: 250px;
-        height: 250px;
+        width: 270px;
+        height: 230px;
         position: absolute;
-        top: 240px;
-        left: calc((100vw - 270px) / 2);
+        top: 250px;
+        left: calc((100vw - 290px) / 2);
     }
     #nut{
-        margin-top: 30px;
+        margin-top: 25px;
         margin-left: 100px;
     }
     button{
         margin-right: 10px;
-        width: 80px;
-        height: 30px;
+        font-size: 14px;
+        width: 85px;
+        height: 35px;
         cursor: pointer;
         border: 1px solid #757575;
         border-radius: 3px;
@@ -164,7 +164,7 @@
     #mat-hot{
         position: absolute;
         top: 330px;
-        left: 90px;
+        left: 95px;
     }
     .hot{
         width: 60px;

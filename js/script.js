@@ -120,3 +120,24 @@ function xoc() {
     var sound = document.getElementById('sound');
     sound.play();
 }
+
+
+let startY;
+
+document.addEventListener('touchstart', function (e) {
+    startY = e.touches[0].clientY;
+});
+
+document.addEventListener('touchmove', function (e) {
+    let currentY = e.touches[0].clientY;
+    let deltaY = currentY - startY;
+
+    if (deltaY > 0) {
+        dayNap();
+    } else if (deltaY < 0) {
+        moNap();
+    }
+
+    // Cập nhật tọa độ ban đầu
+    startY = currentY;
+});
