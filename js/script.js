@@ -74,12 +74,12 @@ function xoc() {
     rungChen();
 
     var index = [
-        '../images/hot/nai.png',
-        '../images/hot/bau.png',
-        '../images/hot/ga.png',
-        '../images/hot/ca.png',
-        '../images/hot/cua.png',
-        '../images/hot/tom.png'
+        './images/hot/nai.png',
+        './images/hot/bau.png',
+        './images/hot/ga.png',
+        './images/hot/ca.png',
+        './images/hot/cua.png',
+        './images/hot/tom.png'
     ];
     
     var hot1 = document.getElementById('hot1');

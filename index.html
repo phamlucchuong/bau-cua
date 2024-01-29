@@ -4,21 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bầu cua</title>
-    <script src="../js/script.js"></script>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="shortcut icon" href="../images/logo.png" type="image/x-icon">
+    <script src="./js/script.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
 </head>
 <body>
-    <audio src="../sounds/mainSound.mp3" id="mainSound"></audio>
-    <audio src="../sounds/audiomass-output.mp3" id="sound"></audio>
-    <div id="bau-cua" onclick="xoc()">
-        <img id="dia" src="../images/chen-dia/dia-removebg-preview.png" alt="">
+    <audio src="./sounds/mainSound.mp3" id="mainSound"></audio>
+    <audio src="./sounds/audiomass-output.mp3" id="sound"></audio>
+    <div id="bau-cua">
+        <img id="dia" src="./images/chen-dia/dia-removebg-preview.png" alt="">
         <div id="mat-hot">
-            <img alt="" src="../images/hot/ga.png" class="hot" id="hot1"></img>
-            <img alt="" src="../images/hot/ga.png" class="hot" id="hot2"></img> 
-            <img alt="" src="../images/hot/ga.png" class="hot" id="hot3"></img>
+            <img alt="" src="./images/hot/ga.png" class="hot" id="hot1">
+            <img alt="" src="./images/hot/ga.png" class="hot" id="hot2">
+            <img alt="" src="./images/hot/ga.png" class="hot" id="hot3">
         </div>
-        <img id="chen" src="../images/chen-dia/chen-removebg-preview.png" alt="">
+        <span onclick="xoc()">
+            <img id="chen" src="./images/chen-dia/chen-removebg-preview.png" alt="">
+        </span>
     </div>
     <div id="nut">
         <button onclick="dayNap()">Đậy nắp</button>
