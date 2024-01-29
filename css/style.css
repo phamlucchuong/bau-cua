@@ -124,6 +124,7 @@
         overflow: hidden;
     }
     #bau-cua{
+        margin-top: 50px;
         position: relative;
         cursor: pointer;
         outline: none;
@@ -146,19 +147,6 @@
         margin-left: 100px;
     }
     button{
-        margin-right: 10px;
-        font-size: 14px;
-        width: 85px;
-        height: 35px;
-        cursor: pointer;
-        border: 1px solid #757575;
-        border-radius: 3px;
-    }
-    button:hover{
-        background-color: #cfcfcf;
-        border-color: black;
-    }
-    #nutXoc{
         display: none;
     }
     #mat-hot{
