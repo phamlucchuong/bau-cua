@@ -117,6 +117,9 @@
 /* moblie */
 
 @media (max-width: 599px) {
+    *:focus{
+        outline: none;
+    }
     html {
         background-image: url(../images/bg/bg-mobile.jpg);
         background-repeat: no-repeat;
@@ -160,7 +163,7 @@
     }
     #mat-hot{
         position: absolute;
-        top: 340px;
+        top: 330px;
         left: 90px;
     }
     .hot{
@@ -185,7 +188,7 @@
     }
     
     .moNap {
-        transform: translateY(-150px);
+        transform: translateY(-160px);
         animation: moveUp 0.5s ease-in-out;
     }
     
@@ -194,7 +197,7 @@
             transform: translateY(0);
         }
         100% {
-            transform: translateY(-150px);
+            transform: translateY(-160px);
         }
     }
     
@@ -205,7 +208,7 @@
     
     @keyframes moveDown {
         0% {
-            transform: translateY(-150px);
+            transform: translateY(-160px);
         }
         100% {
             transform: translateY(0px);

@@ -1,17 +1,15 @@
 
 
 
-window.addEventListener("DOMContentLoaded", function () {
+document.addEventListener('click', function() {
     var mainSound = document.getElementById('mainSound');
+    mainSound.play();
 
     // Bắt sự kiện "ended" bằng cách sử dụng hàm callback
     mainSound.addEventListener("ended", function() {
         mainSound.currentTime = 0;
         mainSound.play();
     });
-
-    // Phát âm thanh khi trang được tải
-    mainSound.play();
 });
 
 
