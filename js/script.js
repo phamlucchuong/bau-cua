@@ -4,7 +4,6 @@ document.addEventListener('click', function() {
     var mainSound = document.getElementById('mainSound');
     mainSound.play();
 
-    // Bắt sự kiện "ended" bằng cách sử dụng hàm callback
     mainSound.addEventListener("ended", function() {
         mainSound.currentTime = 0;
         mainSound.play();
@@ -82,11 +81,7 @@ function moNap() {
 
 function rungChen() {
     var chenDia = document.getElementById('bau-cua');
-
-    // Thêm lớp CSS 'shake' để kích hoạt chuyển động lắc
     chenDia.classList.add('shake');
-
-    // Xóa lớp 'shake' sau khi chuyển động hoàn thành
     setTimeout(function() {
         chenDia.classList.remove('shake');
     }, 500);
@@ -118,15 +113,15 @@ function xoc() {
     var hot3 = document.getElementById('hot3');
     
     // tỉ lệ tự nhiên
-    // var num1 = Math.floor(Math.random() * 6);
-    // var num2 = Math.floor(Math.random() * 6);
-    // var num3 = Math.floor(Math.random() * 6);
+    /* var num1 = Math.floor(Math.random() * 6);
+    var num2 = Math.floor(Math.random() * 6);
+    var num3 = Math.floor(Math.random() * 6);
     
-    // setTimeout(() => {
-    //     hot1.src = index[num1];
-    //     hot2.src = index[num2];
-    //     hot3.src = index[num3];
-    // }, 350);
+    setTimeout(() => {
+        hot1.src = index[num1];
+        hot2.src = index[num2];
+        hot3.src = index[num3];
+    }, 350); */
 
 
 
@@ -173,7 +168,5 @@ document.addEventListener('touchmove', function (e) {
     } else if (deltaY < 0) {
         moNap();
     }
-
-    // Cập nhật tọa độ ban đầu
     startY = currentY;
 });
