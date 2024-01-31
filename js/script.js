@@ -1,6 +1,5 @@
 
 
-
 document.addEventListener('click', function() {
     var mainSound = document.getElementById('mainSound');
     mainSound.play();
@@ -11,6 +10,43 @@ document.addEventListener('click', function() {
         mainSound.play();
     });
 });
+
+
+document.addEventListener('keydown', function(event) {
+    var mainSound = document.getElementById('mainSound');
+    switch(event.key) {
+    case 'X':
+    case 'x':
+        mainSound.muted = !mainSound.muted;
+        break;
+    case 'S':
+    case 's':
+        moNap();
+        break;
+    case 'A':
+    case 'a':
+        dayNap();
+        break;
+    case 'D':
+    case 'd':
+        xoc();
+        break;
+    }
+});
+
+function nhac() {
+    var mainSound = document.getElementById('mainSound');
+    mainSound.muted = !mainSound.muted;
+    var vMax = document.getElementById('volume-max');
+    var vMin = document.getElementById('volume-min');
+    if(mainSound.muted) {
+        vMax.style.display = 'none';
+        vMin.style.display = 'block';
+    } else {
+        vMin.style.display = 'none';
+        vMax.style.display = 'block';
+    }
+}
 
 
 function dayNap() {
@@ -105,9 +141,9 @@ function xoc() {
         }, 350);
         i = 0;
     } else {
-        var num1 = Math.floor(Math.random() * 6);
-        var num2 = Math.floor(Math.random() * 6);
-        var num3 = Math.floor(Math.random() * 6);
+        var num1 = Math.floor(Math.random() * index.length);
+        var num2 = Math.floor(Math.random() * index.length);
+        var num3 = Math.floor(Math.random() * index.length);
     
         setTimeout(() => {
             hot1.src = index[num1];

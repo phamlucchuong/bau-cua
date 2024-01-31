@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bầu cua</title>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css" integrity="sha512-P9vJUXK+LyvAzj8otTOKzdfF1F3UYVl13+F8Fof8/2QNb8Twd6Vb+VD52I7+87tex9UXxnzPgWA3rH96RExA7A==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="./js/script.js"></script>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
@@ -11,6 +13,8 @@
 <body>
     <audio src="./sounds/mainSound.mp3" id="mainSound"></audio>
     <audio src="./sounds/audiomass-output.mp3" id="sound"></audio>
+    <i onclick="nhac()" id="volume-max" class="fas fa-volume-up volume"></i>
+    <i onclick="nhac()" id="volume-min" class="fas fa-volume-mute volume"></i>
     <div id="bau-cua">
         <img id="dia" src="./images/chen-dia/dia-removebg-preview.png" alt="">
         <div id="mat-hot">
@@ -24,7 +28,7 @@
     </div>
     <div id="nut">
         <button onclick="dayNap()">Đậy nắp</button>
-        <button onclick="moNap()">Mở nắp</button>
+        <button onclick="moNap()">Khui</button>
         <button onclick="xoc()">Xốc</button>
     </div>
 </body>

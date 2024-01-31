@@ -11,6 +11,9 @@
         position: relative;
         cursor: pointer;
     }
+    .volume{
+        display: none;
+    }
     #dia{
         margin: 200px 0 0 450px;
         width: 400px;
@@ -122,6 +125,17 @@
         background-repeat: no-repeat;
         background-size: cover;
         overflow: hidden;
+        position: relative;
+    }
+    .volume{
+        color: #b9b9b9;
+        font-size: 25px;
+        position: absolute;
+        top: 30px;
+        right: 18px;
+    }
+    #volume-min{
+        display: none;
     }
     #bau-cua{
         margin-top: 50px;
@@ -129,6 +143,7 @@
         cursor: pointer;
         outline: none;
     }
+    
     #dia{
         margin-top: 300px;
         margin-left: calc((100vw - 350px) / 2);
