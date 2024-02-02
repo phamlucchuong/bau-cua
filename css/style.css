@@ -11,9 +11,6 @@
         position: relative;
         cursor: pointer;
     }
-    .volume{
-        display: none;
-    }
     #dia{
         margin: 200px 0 0 450px;
         width: 400px;
@@ -117,6 +114,10 @@
 
 
 
+
+
+
+
 /* moblie */
 
 @media (max-width: 599px) {
@@ -127,16 +128,49 @@
         overflow: hidden;
         position: relative;
     }
-    .volume{
-        color: #b9b9b9;
-        font-size: 25px;
+    
+    #song{
         position: absolute;
-        top: 30px;
-        right: 18px;
+        top: 20px;
+        left: 20px;
+        font-size: 25px;
+        color: black;
     }
-    #volume-min{
+    #menu{
+        font-size: 16px;
+        display: flex;
+        position: relative;
+        top: 15px;
+    }
+    #playIcon{
         display: none;
     }
+    .icon{
+        margin: 0 10px;
+        color: black;
+    }
+    #list {
+        outline: none;
+        background-color: rgba(0, 0, 0, 0.3);
+        color: white;
+        padding: 3px;
+        border: 2px solid white;
+        border-radius: 20px;
+        line-height: 1.3;
+        font-size: 13px;
+        font-family: Verdana, Tahoma, sans-serif;
+        position: absolute;
+        top: -6px;
+        left: 110px;
+    }
+    #list option {
+        border: 10px solid black !important;
+        font-size: 12px;
+    }
+    option + option {
+        border-top: 1px solid white;
+    }
+
     #bau-cua{
         margin-top: 50px;
         position: relative;
@@ -145,12 +179,14 @@
     }
     
     #dia{
+        outline: none;
         margin-top: 300px;
         margin-left: calc((100vw - 350px) / 2);
         width: 330px;
         height: 200px;
     }
     #chen{
+        outline: none;
         width: 270px;
         height: 230px;
         position: absolute;

@@ -10,10 +10,31 @@
     <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
 </head>
 <body>
-    <audio src="./sounds/mainSound.mp3" id="mainSound"></audio>
-    <audio src="./sounds/audiomass-output.mp3" id="sound"></audio>
-    <i onclick="nhac()" id="volume-max" class="fas fa-volume-up volume"></i>
-    <i onclick="nhac()" id="volume-min" class="fas fa-volume-mute volume"></i>
+    <audio src="" id="mainSound"></audio>
+    <audio src="./sounds/shakeSound.mp3" id="sound"></audio>
+    
+    <div id="menu">
+        <i id="prevIcon" class="fas fa-step-backward icon"></i>
+        <i id="pauseIcon" class="fas fa-pause icon"></i>
+        <i id="playIcon" class="fas fa-play icon"></i>
+        <i id="nextIcon" class="fas fa-step-forward icon"></i>
+
+        <select id="list">
+            <option value="./sounds/backgroundAudio/1.mp3" selected>Ngọc ngu</option>
+            <option value="./sounds/backgroundAudio/2.mp3">Tết là tết sum vầy</option>
+            <option value="./sounds/backgroundAudio/3.mp3">Nhạc xổ số remix</option>
+            <option value="./sounds/backgroundAudio/4.mp3">Mùa xuân đó có em</option>
+            <option value="./sounds/backgroundAudio/5.mp3">Tết đong đầy</option>
+            <option value="./sounds/backgroundAudio/6.mp3">Nhạc xổ số</option>
+            <option value="./sounds/backgroundAudio/7.mp3">Tết này con sẽ về</option>
+            <option value="./sounds/backgroundAudio/8.mp3">Như hoa mùa xuân</option>
+            <option value="./sounds/backgroundAudio/9.mp3">Happy new year</option>
+            <option value="./sounds/backgroundAudio/10.mp3">Chuyện cũ bỏ qua</option>
+        </select>
+
+    </div>
+        
+    
     <div id="bau-cua">
         <img id="dia" src="./images/chen-dia/dia-removebg-preview.png" alt="">
         <div id="mat-hot">

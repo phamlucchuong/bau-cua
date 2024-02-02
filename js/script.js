@@ -1,13 +1,64 @@
 
 
-document.addEventListener('click', function() {
+document.addEventListener("DOMContentLoaded", function () {
     var mainSound = document.getElementById('mainSound');
-    mainSound.play();
+    var songList = document.getElementById('list');
 
-    mainSound.addEventListener("ended", function() {
-        mainSound.currentTime = 0;
+    function handleAudio() {
+        mainSound.src = songList.value;
         mainSound.play();
+
+        mainSound.addEventListener("ended", function () {
+            changeSong();
+        });
+    }
+
+    songList.addEventListener("change", function () {
+        handleAudio();
     });
+
+    document.addEventListener("click", function (event) {
+        if (event.target.id === 'playIcon' || event.target.id === 'pauseIcon') {
+            PlayPause();
+        }
+        if(event.target.id === 'prevIcon') {
+            prevSong();
+        }
+        if(event.target.id === 'nextIcon') {
+            changeSong();
+        }
+    });
+
+    function prevSong() {
+        if(songList.selectedIndex > 0) {
+            songList.selectedIndex--;
+        } else {
+            songList.selectedIndex = songList.options.length - 1;
+        }
+        handleAudio();
+    }
+
+    function PlayPause() {
+        mainSound.paused ? mainSound.play() : mainSound.pause();
+        var pause = document.getElementById('pauseIcon');
+        var play = document.getElementById('playIcon');
+        if (mainSound.paused) {
+            pause.style.display = 'none';
+            play.style.display = 'block';
+        } else {
+            play.style.display = 'none';
+            pause.style.display = 'block';
+        }
+    }
+
+    function changeSong() {
+        if (songList.selectedIndex < songList.options.length - 1) {
+            songList.selectedIndex++;
+        } else {
+            songList.selectedIndex = 0;
+        }
+        handleAudio();
+    }
 });
 
 
@@ -16,7 +67,7 @@ document.addEventListener('keydown', function(event) {
     switch(event.key) {
     case 'X':
     case 'x':
-        mainSound.muted = !mainSound.muted;
+        mainSound.paused ? mainSound.play() : mainSound.pause();
         break;
     case 'S':
     case 's':
@@ -33,19 +84,6 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
-function nhac() {
-    var mainSound = document.getElementById('mainSound');
-    mainSound.muted = !mainSound.muted;
-    var vMax = document.getElementById('volume-max');
-    var vMin = document.getElementById('volume-min');
-    if(mainSound.muted) {
-        vMax.style.display = 'none';
-        vMin.style.display = 'block';
-    } else {
-        vMin.style.display = 'none';
-        vMax.style.display = 'block';
-    }
-}
 
 
 function dayNap() {
