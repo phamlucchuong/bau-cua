@@ -13,7 +13,12 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    handleAudio();
+    mainSound.pause();
+
     songList.addEventListener("change", function () {
+        var pause = document.getElementById('pauseIcon').style.display = 'block';
+        var play = document.getElementById('playIcon').style.display = 'none';
         handleAudio();
     });
 
@@ -29,13 +34,47 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+
+    document.addEventListener('keydown', function(event) {
+        switch(event.key) {
+        case 'Z':
+        case 'z':
+            prevSong();
+            break;
+        case 'X':
+        case 'x':
+            PlayPause();
+            break;
+        case 'C':
+        case 'c':
+            changeSong();
+            break;
+        case 'S':
+        case 's':
+            moNap();
+            break;
+        case 'A':
+        case 'a':
+            dayNap();
+            break;
+        case 'D':
+        case 'd':
+            xoc();
+            break;
+        }
+    });
+
     function prevSong() {
         if(songList.selectedIndex > 0) {
             songList.selectedIndex--;
         } else {
             songList.selectedIndex = songList.options.length - 1;
         }
-        handleAudio();
+        if(!mainSound.paused) {
+            handleAudio();
+        } else {
+            mainSound.src = songList.value;
+        }
     }
 
     function PlayPause() {
@@ -57,30 +96,11 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             songList.selectedIndex = 0;
         }
-        handleAudio();
-    }
-});
-
-
-document.addEventListener('keydown', function(event) {
-    var mainSound = document.getElementById('mainSound');
-    switch(event.key) {
-    case 'X':
-    case 'x':
-        mainSound.paused ? mainSound.play() : mainSound.pause();
-        break;
-    case 'S':
-    case 's':
-        moNap();
-        break;
-    case 'A':
-    case 'a':
-        dayNap();
-        break;
-    case 'D':
-    case 'd':
-        xoc();
-        break;
+        if(!mainSound.paused) {
+            handleAudio();
+        } else {
+            mainSound.src = songList.value;
+        }
     }
 });
 
