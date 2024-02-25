@@ -1,4 +1,5 @@
 
+var isButtonOn; 
 
 document.addEventListener("DOMContentLoaded", function () {
     var mainSound = document.getElementById('mainSound');
@@ -105,35 +106,48 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+var duocDayNap = false;
+var duocMoNap = true;
+
 
 function dayNap() {
-    var chen = document.getElementById('chen');
-    var hot1 = document.getElementById('hot1');
-    var hot2 = document.getElementById('hot2');
-    var hot3 = document.getElementById('hot3');
-    
-    chen.classList.add('dayNap');
-    chen.classList.remove('moNap');
-    setTimeout( () => {
-        hot1.style.display = 'none';
-        hot2.style.display = 'none';
-        hot3.style.display = 'none';
-    } ,500);
+    if(duocDayNap === true) {
+        var chen = document.getElementById('chen');
+        var hot1 = document.getElementById('hot1');
+        var hot2 = document.getElementById('hot2');
+        var hot3 = document.getElementById('hot3');
+        
+        chen.classList.add('dayNap');
+        chen.classList.remove('moNap');
+        setTimeout( () => {
+            hot1.style.display = 'none';
+            hot2.style.display = 'none';
+            hot3.style.display = 'none';
+            duocMoNap = true;
+        },350);
+        duocDayNap = false;
+    }
 }
 
 
 function moNap() {
-    var chen = document.getElementById('chen');
-    var hot1 = document.getElementById('hot1');
-    var hot2 = document.getElementById('hot2');
-    var hot3 = document.getElementById('hot3');
-    
-    chen.classList.add('moNap');
-    chen.classList.remove('dayNap');
-    
-    hot1.style.display = 'block';
-    hot2.style.display = 'block';
-    hot3.style.display = 'block';
+    if(duocMoNap === true) {
+        var chen = document.getElementById('chen');
+        var hot1 = document.getElementById('hot1');
+        var hot2 = document.getElementById('hot2');
+        var hot3 = document.getElementById('hot3');
+        
+        chen.classList.add('moNap');
+        chen.classList.remove('dayNap');
+        
+        hot1.style.display = "block";
+        hot2.style.display = "block";
+        hot3.style.display = "block";
+        setTimeout( () => {
+            duocDayNap = true;
+        },350);
+        duocMoNap = false;
+    }
 }
 
 
@@ -158,32 +172,19 @@ function xoc() {
     rungChen();
 
     var index = [
-        './images/hot/nai.png',
         './images/hot/bau.png',
-        './images/hot/ga.png',
-        './images/hot/ca.png',
         './images/hot/cua.png',
-        './images/hot/tom.png'
+        './images/hot/tom.png',
+        './images/hot/ca.png',
+        './images/hot/ga.png',
+        './images/hot/nai.png',
     ];
     
     var hot1 = document.getElementById('hot1');
     var hot2 = document.getElementById('hot2');
     var hot3 = document.getElementById('hot3');
     
-    // tỉ lệ tự nhiên
-    /* var num1 = Math.floor(Math.random() * 6);
-    var num2 = Math.floor(Math.random() * 6);
-    var num3 = Math.floor(Math.random() * 6);
-    
-    setTimeout(() => {
-        hot1.src = index[num1];
-        hot2.src = index[num2];
-        hot3.src = index[num3];
-    }, 350); */
-
-
-
-    // tỉ lệ có can thiệp
+    // buff tỉ lệ ra 1 con 3 mặt
     if(i == iRate) {
         var num = Math.floor(Math.random() * 6);
 
@@ -197,13 +198,40 @@ function xoc() {
         var num1 = Math.floor(Math.random() * index.length);
         var num2 = Math.floor(Math.random() * index.length);
         var num3 = Math.floor(Math.random() * index.length);
-    
+        var btn = document.getElementById("nut-on-off");
+        var isButtonOff = 10;
+
+        switch(num1) {
+            case 0:
+                isButtonOn = 93;
+                break;
+            case 1:
+                isButtonOn = 136;
+                break;
+            case 2:
+                isButtonOn = 180;
+                break;
+            case 3:
+                isButtonOn = 224;
+                break;
+            case 4:
+                isButtonOn = 268;
+                break;
+            case 5:
+                isButtonOn = 312;
+                break;
+        }
+        btn.style.top = isButtonOn + "px";
+        
         setTimeout(() => {
             hot1.src = index[num1];
             hot2.src = index[num2];
             hot3.src = index[num3];
         }, 350);
         i++;
+
+        
+        btn.style.right = isButtonOff + "px";
     }
 
     var sound = document.getElementById('sound');
