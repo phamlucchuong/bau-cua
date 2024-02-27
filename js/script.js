@@ -1,5 +1,4 @@
 
-var isButtonOn; 
 
 document.addEventListener("DOMContentLoaded", function () {
     var mainSound = document.getElementById('mainSound');
@@ -124,44 +123,13 @@ function dayNap() {
             hot2.style.display = 'none';
             hot3.style.display = 'none';
             duocMoNap = true;
-        },350);
+        },500);
         duocDayNap = false;
     }
 }
 
 
-function moNap() {
-    if(duocMoNap === true) {
-        var chen = document.getElementById('chen');
-        var hot1 = document.getElementById('hot1');
-        var hot2 = document.getElementById('hot2');
-        var hot3 = document.getElementById('hot3');
-        
-        chen.classList.add('moNap');
-        chen.classList.remove('dayNap');
-        
-        hot1.style.display = "block";
-        hot2.style.display = "block";
-        hot3.style.display = "block";
-        setTimeout( () => {
-            duocDayNap = true;
-        },350);
-        duocMoNap = false;
-    }
-}
-
-
-function rungChen() {
-    var chenDia = document.getElementById('bau-cua');
-    chenDia.classList.add('shake');
-    setTimeout(function() {
-        chenDia.classList.remove('shake');
-    }, 500);
-}
-
-
-var i = 0;
-var iRate = Math.floor(Math.random() * (16 - 10 + 1) + 10);
+var num1, num2, num3;
 
 function xoc() {
     var chen = document.getElementById('chen');
@@ -184,60 +152,52 @@ function xoc() {
     var hot2 = document.getElementById('hot2');
     var hot3 = document.getElementById('hot3');
     
-    // buff tỉ lệ ra 1 con 3 mặt
-    if(i == iRate) {
-        var num = Math.floor(Math.random() * 6);
+    num1 = Math.floor(Math.random() * index.length);
+    num2 = Math.floor(Math.random() * index.length);
+    num3 = Math.floor(Math.random() * index.length);
 
-        setTimeout(() => {
-            hot1.src = index[num];
-            hot2.src = index[num];
-            hot3.src = index[num];
-        }, 350);
-        i = 0;
-    } else {
-        var num1 = Math.floor(Math.random() * index.length);
-        var num2 = Math.floor(Math.random() * index.length);
-        var num3 = Math.floor(Math.random() * index.length);
-        var btn = document.getElementById("nut-on-off");
-        var isButtonOff = 10;
-
-        switch(num1) {
-            case 0:
-                isButtonOn = 93;
-                break;
-            case 1:
-                isButtonOn = 136;
-                break;
-            case 2:
-                isButtonOn = 180;
-                break;
-            case 3:
-                isButtonOn = 224;
-                break;
-            case 4:
-                isButtonOn = 268;
-                break;
-            case 5:
-                isButtonOn = 312;
-                break;
-        }
-        btn.style.top = isButtonOn + "px";
-        
-        setTimeout(() => {
-            hot1.src = index[num1];
-            hot2.src = index[num2];
-            hot3.src = index[num3];
-        }, 350);
-        i++;
-
-        
-        btn.style.right = isButtonOff + "px";
-    }
+    setTimeout(() => {
+        hot1.src = index[num1];
+        hot2.src = index[num2];
+        hot3.src = index[num3];
+    }, 350);
 
     var sound = document.getElementById('sound');
     sound.play();
 }
 
+
+function moNap() {
+    if(duocMoNap === true) {
+        var chen = document.getElementById('chen');
+        var hot1 = document.getElementById('hot1');
+        var hot2 = document.getElementById('hot2');
+        var hot3 = document.getElementById('hot3');
+        
+        chen.classList.add('moNap');
+        chen.classList.remove('dayNap');
+        
+        hot1.style.display = "block";
+        hot2.style.display = "block";
+        hot3.style.display = "block";
+        setTimeout( () => {
+            duocDayNap = true;
+        },500);
+        duocMoNap = false;
+    }
+}
+
+
+function rungChen() {
+    var chenDia = document.getElementById('bau-cua');
+    chenDia.classList.add('shake');
+    setTimeout(function() {
+        chenDia.classList.remove('shake');
+    }, 500);
+}
+
+
+// bắt sự kiện vuốt lên hoặc vuốt xuống để mở nắp hoặc đậy nắp
 
 let startY;
 
